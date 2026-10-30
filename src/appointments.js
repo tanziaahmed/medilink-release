@@ -4,6 +4,12 @@ const store = require('./store');
 const reminders = require('./reminders');
 
 function book(patient, clinic, startsAt) {
+  const taken = [...store.appointments.values()].some(
+    (a) => a.clinic === clinic && a.startsAt === startsAt && a.status !== 'CANCELLED'
+  );
+  if (taken) {
+    throw new Error(`Slot at ${clinic} starting ${startsAt} is already booked`);
+  }
   const appointment = {
     id: store.newId(),
     patient,
