@@ -1,0 +1,13 @@
+{
+  "name": "medilink-release",
+  "version": "1.0.0",
+  "description": "MediLink appointment platform - next release (course simulation)",
+  "main": "src/appointments.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
