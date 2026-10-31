@@ -12,7 +12,7 @@
 | Engineering Manager / Team Lead | _name_ | Workflow and board, WIP enforcement, reviews, coaching, incident coordination. Does not take the hardest technical tasks. |
 | Developer 1 | _name_ | Features (#2, #3), booking tests (#9) |
 | Developer 2 | _name_ | Opt-out feature (#4), double-booking defect (#5), incident owner |
-| Developer 3 | _name_ | Time zone defect (#6), maintenance (#7, #8), CI coverage gate (#10) |
+| Developer 3 | Mustafa | Time zone defect (#6), maintenance (#7, #8), CI coverage gate (#10) |
 
 ## Committed items
 
