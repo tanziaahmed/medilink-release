@@ -14,6 +14,20 @@ test('booking creates an appointment with status BOOKED', () => {
   expect(appointments.get(appt.id).status).toBe('BOOKED');
 });
 
+test('a second patient cannot book a slot that is already booked', () => {
+  const startsAt = Date.now() + 48 * HOUR;
+  appointments.book('patient-1', 'clinic-A', startsAt);
+  expect(() => appointments.book('patient-2', 'clinic-A', startsAt)).toThrow(/already booked/);
+});
+
+test('a cancelled slot can be booked again', () => {
+  const startsAt = Date.now() + 48 * HOUR;
+  const first = appointments.book('patient-1', 'clinic-A', startsAt);
+  appointments.cancel(first.id);
+  const second = appointments.book('patient-2', 'clinic-A', startsAt);
+  expect(appointments.get(second.id).status).toBe('BOOKED');
+});
+
 test('cancelling sets status to CANCELLED', () => {
   const appt = appointments.book('patient-1', 'clinic-A', Date.now() + 48 * HOUR);
   appointments.cancel(appt.id);
