@@ -11,7 +11,7 @@
 | --- | --- | --- |
 | Engineering Manager / Team Lead | _name_ | Workflow and board, WIP enforcement, reviews, coaching, incident coordination. Does not take the hardest technical tasks. |
 | Developer 1 | _name_ | Features (#2, #3), booking tests (#9) |
-| Developer 2 | _name_ | Opt-out feature (#4), double-booking defect (#5), incident owner |
+| Developer 2 | Ilyes | Opt-out feature (#4), double-booking defect (#5), incident owner |
 | Developer 3 | _name_ | Time zone defect (#6), maintenance (#7, #8), CI coverage gate (#10) |
 
 ## Committed items
@@ -33,7 +33,7 @@ Each member adds their own objective below (via a pull request).
 
 - **EM:** Keep the time from PR opened to first review under 8 working hours for every PR opened between Oct 30 and Nov 1, checked each evening on the board and reported in my daily update.
 - **Dev 1:**
-- **Dev 2:**
+- **Dev 2: Resolve the P1 reminder incident with a regression test, a Five Whys analysis and at least two preventive-action issues by Sat Oct 31 at 9 pm.**
 - **Dev 3:**
 
 ## Daily updates
