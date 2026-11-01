@@ -9,7 +9,7 @@
 
 | Role | Name | Responsibilities |
 | --- | --- | --- |
-| Engineering Manager / Team Lead | _name_ | Workflow and board, WIP enforcement, reviews, coaching, incident coordination. Does not take the hardest technical tasks. |
+| Engineering Manager / Team Lead | Tanzia | Workflow and board, WIP enforcement, reviews, coaching, incident coordination. Does not take the hardest technical tasks. |
 | Developer 1 | _name_ | Features (#2, #3), booking tests (#9) |
 | Developer 2 | Ilyes | Opt-out feature (#4), double-booking defect (#5), incident owner |
 | Developer 3 | _name_ | Time zone defect (#6), maintenance (#7, #8), CI coverage gate (#10) |
