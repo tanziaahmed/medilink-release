@@ -30,9 +30,10 @@ An item is Done only when:
 
 1. All acceptance criteria are met
 2. Tests are added or updated and CI passes
-3. The PR is reviewed and approved by someone other than the author
-4. Someone other than the author has verified it against the acceptance criteria and left a comment on the issue
-5. The PR is merged and the issue is closed; docs are updated if behaviour changed
+3. Side effects on other features (e.g. reminders, emails) have been checked
+4. The PR is reviewed and approved by someone other than the author
+5. Someone other than the author has verified it against the acceptance criteria and left a comment on the issue
+6. The PR is merged and the issue is closed; docs are updated if behaviour changed
 
 ## Branches and pull requests
 
@@ -44,3 +45,9 @@ An item is Done only when:
 
 - Aim to give a first review within 8 working hours of a PR opening
 - Review comments are about the code, not the person
+
+## Production incidents
+
+- Every P1 incident gets an issue from the Production incident template.
+- Within 48 h of a P1 being fixed, the owner and the EM hold a post-incident review: complete the Five Whys in the issue and create an issue for each corrective or preventive action.
+- Keep it blameless: describe what the process allowed, not who made a mistake.
