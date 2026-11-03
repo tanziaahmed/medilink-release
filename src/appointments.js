@@ -11,6 +11,14 @@ function book(patient, clinic, startsAt) {
     startsAt,
     status: 'BOOKED',
   };
+  const slotTaken = [...store.appointments.values()].some(
+  (a) => a.clinic === clinic && a.startsAt === startsAt && a.status === 'BOOKED'
+);
+if (slotTaken) {
+  throw new Error('This slot is already booked');
+}
+
+  
   store.appointments.set(appointment.id, appointment);
   reminders.scheduleReminder(appointment);
   return appointment;
