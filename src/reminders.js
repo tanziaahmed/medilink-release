@@ -1,6 +1,7 @@
 // Reminder service.
 // A reminder is queued when an appointment is booked and sent
 // 24 hours before the appointment by a scheduled job.
+const store = require('./store');
 
 const REMINDER_LEAD_MS = 24 * 60 * 60 * 1000;
 
@@ -15,14 +16,21 @@ function scheduleReminder(appointment) {
   });
 }
 
-// Called by the scheduled job. Sends every reminder whose send time has passed.
+// Called by the scheduled job. Sends every reminder whose send time has passed,
+// but only if the appointment is still booked at the moment of sending.
 function sendDue(now) {
   const due = queue.filter((r) => r.sendAt <= now);
+  let sentCount = 0;
   for (const reminder of due) {
-    sent.push({ ...reminder, sentAt: now });
     queue.splice(queue.indexOf(reminder), 1);
+    const appointment = store.appointments.get(reminder.appointmentId);
+    if (!appointment || appointment.status !== 'BOOKED') {
+      continue; // cancelled or removed: drop the reminder instead of sending it
+    }
+    sent.push({ ...reminder, sentAt: now });
+    sentCount++;
   }
-  return due.length;
+  return sentCount;
 }
 
 function reset() {
