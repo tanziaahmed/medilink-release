@@ -4,7 +4,14 @@
   "description": "MediLink appointment platform - next release (course simulation)",
   "main": "src/appointments.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "lines": 70
+      }
+    }
   },
   "license": "MIT",
   "devDependencies": {
