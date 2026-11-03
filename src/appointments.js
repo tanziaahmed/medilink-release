@@ -4,6 +4,9 @@ const store = require('./store');
 const reminders = require('./reminders');
 
 function book(patient, clinic, startsAt) {
+  if (startsAt <= Date.now()) {
+    throw new Error('Cannot book an appointment in the past');
+  }
   const appointment = {
     id: store.newId(),
     patient,
@@ -11,6 +14,7 @@ function book(patient, clinic, startsAt) {
     startsAt,
     status: 'BOOKED',
   };
+
   store.appointments.set(appointment.id, appointment);
   reminders.scheduleReminder(appointment);
   return appointment;
